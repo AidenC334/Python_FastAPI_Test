@@ -49,7 +49,11 @@ def get_db():
         db.close()
 
 # Create the FastAPI app instance
-app = FastAPI(title="Shop Products API")
+app = FastAPI(
+    title="Product Management API",
+    description="API for managing products with CRUD operations",
+    version="1.0.0"
+)
 
 # Endpoint to create a new product
 @app.post("/products/", response_model=ProductRead)
