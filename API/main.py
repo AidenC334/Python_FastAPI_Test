@@ -42,6 +42,9 @@ class ProductRead(ProductCreate):
 # Dependency to get a database session
 # Ensures each request gets its own session and closes it after
 def get_db():
+    """
+    Yields a database session for use in request handlers, ensuring it is closed after the request is processed.
+    """
     db = SessionLocal()
     try:
         yield db
